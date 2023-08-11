@@ -1,13 +1,14 @@
-import Home from '../pages/index';
-import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import Home from "../pages/index";
+import "@testing-library/jest-dom";
+import { render } from "@testing-library/react";
+// this is test
 
 describe("Home Page", () => {
   test("renders at least one link to https://vercel.com in the first child of 'main' ", () => {
-    const {container} = render(<Home />);
+    const { container } = render(<Home />);
 
     // attempt to fetch the first child element within the "main" element
-    const child = container.querySelector('main *');
+    const child = container.querySelector("main *");
 
     // ensure the the child element exists
     expect(child).toBeTruthy();
@@ -21,9 +22,8 @@ describe("Home Page", () => {
     // count the number of links that include "https://vercel.com"
     let vercelLinks = 0;
 
-    childLinks.forEach(link => {
-      if(link.href.includes("https://vercel.com"))
-        vercelLinks++;
+    childLinks.forEach((link) => {
+      if (link.href.includes("https://vercel.com")) vercelLinks++;
     });
 
     // ensure that there is at least one link that includes "https://vercel.com"
