@@ -1,9 +1,10 @@
-describe("check Not Found (404)", () => {
-  it("should return status 404 when visiting /unknown", () => {
-    // See Request: https://docs.cypress.io/api/commands/request and
-    // Its: https://docs.cypress.io/api/commands/its for more information regarding this test
-    cy.request({ url: "/unknown", failOnStatusCode: false })
-      .its("status")
-      .should("equal", 404);
-  });
+const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+    baseUrl: "http://localhost:3000",
+  },
 });
