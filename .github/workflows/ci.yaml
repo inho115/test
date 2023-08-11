@@ -1,3 +1,5 @@
+name: CI
+on: [push]
 jobs:
   run-tests:
     name: Lint and Test
